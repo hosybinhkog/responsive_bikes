@@ -1,0 +1,132 @@
+.hero{
+    height: 100vh;
+    padding-top: $header-height;
+    position: relative;
+    &-container{
+        height: 100%;
+        position: relative;
+    }
+
+    & .slide{
+        display: flex;
+        height: 0;
+        overflow: hidden;
+        &.active{
+            height: 100%;
+        }
+    }
+    & .slide-img{
+        width: 58%;
+        padding-right: 60px;
+        padding-top: 80px;
+        z-index:1;
+
+        & img{
+            width: 100%;
+            transform:rotate(-70deg);
+            transform-origin: bottom;
+            opacity: 0;
+            transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+            opacity 0.6s ease 0s;
+        }
+    }
+    & .slide.active .slide-img img{
+        transform:rotate(0);
+        opacity: 1;
+    }
+
+    & .slide-txt{
+        width: 42%;
+        padding-left: 60px;
+    }
+    & .slide-title{
+        width: max-content;
+
+        & >h3{
+            font-size: 13.5rem;
+            font-family: BerlinSansFBDemiBold;
+            color: $text-white;
+            text-transform: capitalize;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 4px;
+            transform: translateY(-200px);
+            transition: transform 0.5s ease 0;
+        }
+    }
+    & .slide.active .slide-title h3{
+        transform:translateX(0);
+    }
+
+    & .slide-description,
+    .slide-btn{
+        margin-top: 84px;
+    }
+
+    & .slide-description p{
+        font-size: 1.4rem;
+        transition-delay: 0.3s;
+    }
+
+
+    & .hero-btn{
+        font-size: 1.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 10px 50px;
+        background-color: $text-white;
+        color: $main-color;
+        transition: transform .3s ease 0s;
+    }
+
+    & .slide-description > p,
+    .slide-btn{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    & .slide-btn{
+        transition-delay: 0.6s;
+    }
+
+    & .hero-btn:hover{
+        transform: translateY(-10px);
+    }
+
+    &-txt{
+        position:absolute;
+        text-transform: uppercase;
+        font-family: BerlinSansFBDemiBold;
+        font-size: 11.75rem;
+        top:200px;
+        right: -182px;
+        color: $second-color;
+        transform: rotate(-90deg);
+    }
+    & .slide-control{
+        display: flex;
+        align-items: center;
+        position: absolute;
+        z-index: 98;
+        bottom: 20px;
+        left: 50%;
+        transform: rotateX(-50%);
+
+        & > li{
+            font-size: 1.75rem;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease 0;
+
+            & ~ li{
+                margin-left: 30px;
+            }
+
+            &.active{
+                transform: scale(1.5rem);
+                color: $text-white;
+            }
+        }
+    }
+}
+

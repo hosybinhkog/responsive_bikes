@@ -1,0 +1,78 @@
+footer{
+    background-color:$second-color;
+    margin-top: 90px;
+    padding-bottom: 60px;
+}
+
+.footer-description{
+    margin: 30px 0;
+}
+
+.socials{
+    display: flex;
+}
+
+.socials > li ~ li {
+    margin-left: 20px;
+}
+
+.socials > li > a{
+    font-size: 1.5rem;
+    &:hover{
+        color: $text-white;
+    }
+}
+
+.footer-menu > li ~ li {
+    margin-top: 20px;
+}
+
+.footer-menu > li > a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    &:hover{
+        color: $text-white;
+    }
+}
+
+.subscribe-form > input{
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+}
+
+.footer-header{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: $text-white;
+}
+
+.to-right {
+    transform: translateX(-200px);
+}
+
+.to-left {
+    transform: translateX(200px);
+}
+
+.to-right,
+.to-left,
+.to-top {
+    opacity: 0;
+    transition: all 1.5s ease 0s;
+}
+
+.to-right.show,
+.to-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.to-top {
+    transform: translateY(100px);
+}
+
+.to-top.show {
+    transform: translateY(0);
+    opacity: 1;
+}

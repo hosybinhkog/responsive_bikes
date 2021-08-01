@@ -1,0 +1,90 @@
+header{
+    position: fixed;
+    height: $header-height;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent;
+    @include flexBox(center,space-between);
+    padding: 0 $header-padding;
+    z-index: 99;
+    transition: height 0.3s ease 0s, background-color 0.3s ease 0s;
+    &.shrink{
+        height: 60px;
+        background-color: $second-color;
+    }
+
+    & .main-menu-wrapper{
+        position:absolute;
+        inset: 0;
+        @include flexBoxCenter();
+        pointer-events: none;
+        
+    }
+
+    & .main-menu{
+        display: flex;
+        pointer-events: visible;
+
+        & > li > a{
+            text-transform: capitalize;
+            font-size: 1.5rem;
+            color: $txt-color;
+
+            &.active{
+                color:$text-white;
+            }
+        }
+
+        & li ~ li {
+            margin-left: 84px;
+        }
+    }
+
+    & .main-menu > li >a:hover,
+    & .user-menu > li >a:hover{
+        color:$text-white;
+    }
+
+    & .user-menu{
+        @include flexBoxCenter();
+    }
+
+    & .user-menu > li ~ li {
+        margin-left: 20px;
+    }
+    & .user-menu > li > a > i{
+        font-size: 1.5rem;
+    }
+
+    & .menu-toggle{
+        font-size: 2.4rem;
+        color: $text-white;
+        width: 3.7rem;
+        height: 100%;
+        border-radius:50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition-delay: .2s;
+        display: none;
+
+        &:hover{
+            font-size: 3rem;
+            font-weight: bold;
+            background-color: #fff;
+            color: $bg-black;
+        }
+    }
+}
+
+
+@include maxWidth(1230px){
+    header{
+        padding:0 50px;
+        & .main-menu-wrapper{
+            display: none;
+        }
+    }
+}

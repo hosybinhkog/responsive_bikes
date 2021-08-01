@@ -1,0 +1,38 @@
+.news-card{
+    padding: 20px;
+}
+
+.news-card-img{
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+}
+
+.img-wrapper,
+.img-wrapper .img{
+    position: absolute;
+    inset:0;
+    overflow: hidden;
+}
+
+.img-wrapper .img{
+    background-position:  center;
+    background-size: cover;
+    transition: transform 0.5s ease 0s;
+}
+
+.news-card:hover .img{
+    transform: scale(1.2);
+}
+
+.news-card-img,
+.news-title,
+.news-preview{
+    margin-bottom: 20px;
+}
+
+.news-title{
+    font-size: 2rem;
+    color: $text-white;
+}
+

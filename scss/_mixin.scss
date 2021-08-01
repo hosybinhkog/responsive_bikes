@@ -1,0 +1,37 @@
+@mixin size($width, $height){
+    width: $width;
+    height: $height;
+}
+
+
+@mixin bgc($color:$main-color){
+    background-color: $color;
+}
+
+
+@mixin flexBoxCenter(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin maxWidth($breakpoint){
+    @media screen and (max-width:$breakpoint){
+        @content;
+    }
+}
+@mixin minWidth($breakpoint){
+    @media screen and (min-width:$breakpoint){
+        @content;
+    }
+}
+
+@mixin flexBox($align-items: stretch,
+$justify-content: flex-start ,$flex-direction:row
+,$wrap: nowrap,$flex:flex){
+    display: $flex;
+    justify-content:$justify-content; 
+    align-items:$align-items;
+    flex-direction:$flex-direction;
+    flex-wrap: $wrap;
+}

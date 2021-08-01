@@ -1,0 +1,17 @@
+$main-color:#1d1d1d;
+$second-color:#3a3a3a;
+$txt-color: #bbbbbb;
+$text-white: #ffffff;
+$bg-black: #000;
+
+$header-height: 144px;
+$header-padding: 93px;
+
+@font-face {
+    font-family: MyriadProCondensed;
+    src: url(./fonts/MyriadProCondensed/MyriadProCondensed.ttf)
+}
+@font-face {
+    font-family: BerlinSansFBDemiBold;
+    src: url(./fonts/BerlinSansFBDemiBold/BerlinSansFBDemiBold.ttf)
+}
